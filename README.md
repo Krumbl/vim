@@ -1,6 +1,10 @@
-clone to ~/.vim
-ln -s .vimrc ~/.vim/.vimrc
-run :BundleInstall to setup plugins
+TODO - README is work in progress
+
+INSTALL
+-------
+	clone to ~/.vim
+	ln -s .vimrc ~/.vim/.vimrc
+	run :BundleInstall to setup plugins
 
 
 plugins managed with vundle - https://github.com/gmarik/vundle
@@ -24,3 +28,7 @@ za - expand/collapse
 
 find/replace
 :1,$s/SEARCH/REPLACE/g
+
+reload vimrc
+:so %	" % is currentfile
+:so $MYVIMRC
