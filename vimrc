@@ -26,6 +26,8 @@ Bundle 'gmarik/vundle'
 " ...
 
 Bundle 'http://github.com/scrooloose/nerdtree.git'
+Bundle 'http://github.com/Townk/vim-autoclose.git'
+" Bundle 'http://github.com/drmingdrmer/xptemplate.git'
 
 filetype plugin indent on	" required!
 "
@@ -58,7 +60,7 @@ endif
 
 " color scheme :colo
 if !has("gui_running")
-	colorscheme delek
+	colorscheme candycode
 	"colorscheme elflord
 end
 if has("gui_running")
@@ -90,10 +92,18 @@ set backupdir=~/.vim/.backup
 set viminfo=%100,'100,/100,h,\"500,:100,n~/.viminfo
 set history=200
 
+" other
+let NERDTreeQuitOnOpen = 0
+
 " -----------------------------------------------------------------------------
 " Key Bindings - :help key-notation
-nnoremap <S-h> gT
-nnoremap <S-l> gt
+nnoremap <C-h> gT
+nnoremap <C-l> gt
+
+nnoremap <S-h> h
+nnoremap <S-j> j
+nnoremap <S-k> k
+nnoremap <S-l> l
 
 " save alt-# keys
 let c='0'
@@ -119,7 +129,6 @@ map td :tabn<CR>
 map tw :tabnew<CR>
 map ts :tabc<CR>
 
-
 nnoremap <A-1> 1gt
 nnoremap <A-2> 2gt
 nnoremap <A-3> 3gt
@@ -130,13 +139,20 @@ nnoremap <A-7> 7gt
 nnoremap <A-8> 8gt
 nnoremap <A-9> 9gt
 
+" resize to 1.5 or 2/3 - http://vim.wikia.com/wiki/Resize_splits_more_quickly
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+
 " clear highlight - http://stackoverflow.com/a/657484/1174618
 map <F3> :let @/ = ""<CR>
 
+map <Leader>d :let NERDTreeQuitOnOpen = 0<CR>
+map <Leader>D :let NERDTreeQuitOnOpen = 1<CR>
+map <C-N> :NERDTreeToggle<CR>
 
-
-
-
+" iaabrev </ </
+" ab S self
+" iab rbang #!/usr/bin/env ruby
 
 " http://writequit.org/blog/?p=195
 

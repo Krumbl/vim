@@ -21,6 +21,8 @@ modify .vim/ftplugin/LANGUAGE.vim with settings
 NerdTree - https://github.com/scrooloose/nerdtree.git
 :NERDTree /path
 ctrl+ww - change focus
+i - split
+s - vertical split
 
 folding
 :help folding
