@@ -27,6 +27,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'http://github.com/scrooloose/nerdtree.git'
 Bundle 'http://github.com/Townk/vim-autoclose.git'
+Bundle 'http://github.com/jaxbot/brolink.vim.git'
 " Bundle 'http://github.com/drmingdrmer/xptemplate.git'
 
 filetype plugin indent on	" required!
@@ -60,8 +61,8 @@ endif
 
 " color scheme :colo
 if !has("gui_running")
-	colorscheme candycode
-	"colorscheme elflord
+	"colorscheme candycode
+	colorscheme elflord
 end
 if has("gui_running")
 	colorscheme macvim	" macvim == win
@@ -128,6 +129,8 @@ map ta :tabp<CR>
 map td :tabn<CR>
 map tw :tabnew<CR>
 map ts :tabc<CR>
+
+" map ww :w<CR>
 
 nnoremap <A-1> 1gt
 nnoremap <A-2> 2gt
