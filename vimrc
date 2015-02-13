@@ -47,6 +47,11 @@ set number
 set tabstop=4
 set shiftwidth=4
 
+" general settings
+" -----------------------------------------------------------------------------
+" white space chars
+set listchars=tab:▸\ ,eol:¬
+
 " -----------------------------------------------------------------------------
 " fix escape codes for COLORS!
 if has("terminfo")
@@ -98,6 +103,18 @@ let NERDTreeQuitOnOpen = 0
 
 " -----------------------------------------------------------------------------
 " Key Bindings - :help key-notation
+"map <Esc>s :w<CR>
+"map <C-s> :w<CR>
+"vmap <C-s> <esc>:w<CR>gv
+
+noremap <C-S> :update<CR>
+vnoremap <C-S> <C-C>:update<CR>
+inoremap <C-S> <C-O>:update<CR>
+
+
+
+
+
 nnoremap <C-h> gT
 nnoremap <C-l> gt
 
@@ -149,6 +166,10 @@ nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 " clear highlight - http://stackoverflow.com/a/657484/1174618
 map <F3> :let @/ = ""<CR>
 
+" toggle showing tabs (see listchars)
+map <C-l> :set list!<CR>
+
+" NerdTree
 map <Leader>d :let NERDTreeQuitOnOpen = 0<CR>
 map <Leader>D :let NERDTreeQuitOnOpen = 1<CR>
 map <C-N> :NERDTreeToggle<CR>
@@ -284,6 +305,10 @@ cmap w!! %!sudo tee > /dev/null %
 " ruby helpers
 iab rbang #!/usr/bin/env ruby
 iab idef def initialize
+
+
+" Shortcut to rapidly toggle `set list` with \l
+nmap <leader>l :set list!<CR>
 
 " ---------------------------------------------------------------------------
 " setup for the visual environment
